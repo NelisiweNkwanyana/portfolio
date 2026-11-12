@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#eef3f4">
+  <meta name="description" content="Nelisiwe Nkwanyana — Business Information Systems student working across data, full-stack development and UI/UX.">
+  <title>Nelisiwe Nkwanyana — Data · Build · Design</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+      "gsap": "/node_modules/gsap/index.js",
+      "gsap/ScrollTrigger": "/node_modules/gsap/ScrollTrigger.js"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <nav class="nav">
+    <a class="wordmark" href="#home" aria-label="Nelisiwe home">NN<span>®</span></a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#experience">Education</a>
+      <a href="#achievements">Achievements</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+    </div>
+    <a class="nav-cta" href="#contact">Contact <span>↗</span></a>
+    <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+  </nav>
+
+  <main>
+
+    <!-- ================= HERO ================= -->
+    <section class="hero section-shell" id="home">
+
+      <div class="hero-stage">
+
+        <div class="hero-identity">
+          <h1>NELISIWE<br>NKWANYANA</h1>
+          <ul class="hero-facts">
+            <li>
+              <span class="fact-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="10" r="2.6"/></svg>
+              </span>
+              PRETORIA, GAUTENG, SOUTH AFRICA
+            </li>
+            <li>
+              <span class="fact-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9.5 12 4l10 5.5L12 15 2 9.5z"/><path d="M6 11.6V16c0 1.4 2.7 2.6 6 2.6s6-1.2 6-2.6v-4.4"/><path d="M22 9.5V15"/></svg>
+              </span>
+              BACHELOR OF BUSINESS INFORMATION SYSTEMS, YEAR 3 AT STADIO
+            </li>
+            <li>
+              <span class="fact-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 7 4 12 9 17"/><polyline points="15 7 20 12 15 17"/></svg>
+              </span>
+              DATA, FULL-STACK AND UI/UX
+            </li>
+          </ul>
+        </div>
+
+        <div class="hero-portrait"
+             data-portrait
+             tabindex="0"
+             role="button"
+             aria-label="Interactive portrait. Move your pointer to reveal the AURA artwork. Press Enter to toggle.">
+
+          <img class="portrait-layer layer-photo"
+               data-portrait-photo
+               draggable="false"
+               src="assets/portrait-colour.png"
+               alt="Nelisiwe in a navy jacket">
+
+          <img class="portrait-layer layer-alt"
+               data-portrait-alt
+               draggable="false"
+               src="assets/portrait-silver.png"
+               alt="AURA portrait artwork with blue and gold details">
+
+          <canvas class="portrait-canvas" data-portrait-canvas aria-hidden="true"></canvas>
+
+        </div>
+
+        <aside class="hero-side-facts">
+
+          <div class="side-block">
+            <span class="side-label">CURRENTLY</span>
+            <strong class="side-title">BBIS STUDENT</strong>
+            <small class="side-sub">Stadio Higher Institution</small>
+          </div>
+
+          <div class="side-block">
+            <span class="side-label">LATEST PROJECT</span>
+            <strong class="side-title">SA RETAIL BUSINESS DATA PIPELINE</strong>
+            <small class="side-sub">Python, 2026</small>
+          </div>
+
+          <div class="side-block side-block-stats">
+            <span class="side-label">AT A GLANCE</span>
+            <div class="mini-stats">
+              <div><strong>5</strong><small>PROJECTS</small></div>
+              <div><strong>6</strong><small>SKILLS</small></div>
+              <div><strong>1</strong><small>CERTIFICATIONS</small></div>
+            </div>
+          </div>
+
+        </aside>
+
+      </div>
+
+      <div class="hero-footer-bar">
+
+        <button class="aura-toggle" type="button" aria-pressed="false" aria-label="Reveal the AURA portrait">
+          <span class="aura-icon" aria-hidden="true">⇄</span>
+          <span class="aura-copy">
+            <span class="aura-label">SHOW AURA</span>
+            <small>Switch portrait</small>
+          </span>
+        </button>
+
+        <button class="projects-pink-btn" type="button" id="projectsPinkBtn">
+          <span class="brk brk-l" aria-hidden="true"></span>
+          VIEW PROJECTS <span aria-hidden="true">↗</span>
+          <span class="brk brk-r" aria-hidden="true"></span>
+        </button>
+
+      </div>
+
+    </section>
+
+    <!-- ================= INTRO BAND ================= -->
+    <section class="intro-band">
+      <p>GOOD SYSTEMS TELL STORIES.<br><span>SO DOES GOOD DATA.</span></p>
+      <span class="band-index">[ 001 — INTRODUCTION ]</span>
+    </section>
+
+    <!-- ================= ABOUT ================= -->
+    <section class="about section-pad reveal" id="about">
+      <div class="about-head">
+        <h2 class="about-title">ABOUT</h2>
+        <div class="about-meta">
+          <span class="about-meta-line">BEHIND THE WORK</span>
+          <span class="about-meta-line">A LITTLE ABOUT ME</span>
+        </div>
+      </div>
+      <div class="about-body">
+        <p class="about-lede">I’m a Final-year Bachelor of Business Information Systems (BBIS) student at the Stadio Higher Institution. I’m interested in where data, design, and technology meet.</p>
+        <p class="about-lede">Good systems tell stories, and so does good data. My work joins analytical thinking with clean, reliable engineering.</p>
+        <p class="about-lede">Skilled in Python, SQL, PostgreSQL, pandas, and Power BI, with a strong foundation in ETL pipeline development, data cleaning, and relational data modelling. Passionate about turning messy, real-world data into trustworthy systems that drive business decisions.</p>
+      </div>
+      <div class="about-facts">
+        <div class="about-fact">
+          <span class="about-fact-label">BASED IN</span>
+          <span class="about-fact-value">Pretoria, South Africa</span>
+        </div>
+        <div class="about-fact">
+          <span class="about-fact-label">CURRENTLY STUDYING</span>
+          <span class="about-fact-value">BBIS · Final year</span>
+        </div>
+      </div>
+
+      <div class="about-cv">
+        <a class="cv-btn cv-btn--large" href="assets/Nelisiwe-Nkwanyana-CV.pdf" download>
+          <span class="cv-icon" aria-hidden="true">↓</span>
+          <span class="cv-copy">
+            <span class="cv-label">DOWNLOAD CV</span>
+            <small>Nelisiwe Nkwanyana · PDF</small>
+          </span>
+        </a>
+        <p class="about-cv-note">Recruiters — grab the one-page CV here.</p>
+      </div>
+    </section>
+
+    <!-- ================= EDUCATION & EXPERIENCE ================= -->
+    <section class="education section-pad reveal" id="experience">
+      <div class="edu-grid">
+        <div class="edu-col">
+          <h2 class="edu-title">EDUCATION</h2>
+          <div class="edu-rule"></div>
+          <article class="edu-item">
+            <p class="edu-date">2024 — IN PROGRESS</p>
+            <h3 class="edu-degree">Bachelor of Business Information Systems</h3>
+            <p class="edu-place">STADIO Higher Institution · 3rd year</p>
+          </article>
+          <div class="edu-rule"></div>
+          <article class="edu-item">
+            <p class="edu-date">2025</p>
+            <h3 class="edu-degree">Business Administration</h3>
+            <p class="edu-place">NQF Level 3</p>
+          </article>
+        </div>
+        <div class="edu-col">
+          <h2 class="edu-title">EXPERIENCE</h2>
+          <div class="edu-rule"></div>
+          <article class="exp-item">
+            <div class="exp-logo">
+              <img src="assets/M-logo.png" alt="McDonald's" draggable="false">
+            </div>
+            <div class="exp-body">
+              <p class="edu-date">OCTOBER 2023</p>
+              <h3 class="edu-degree">Crew Member — McDonald’s</h3>
+              <p class="edu-place">Mams Mall · South Africa</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ACHIEVEMENTS ================= -->
+    <section class="achievements section-pad reveal" id="achievements">
+      <div class="section-shell">
+        
+        <!-- Top Header Row -->
+        <div class="achievements-header-row">
+          <h2>ACHIEVEMENTS</h2>
+          <div class="achievements-meta">
+            <span>COMPETITIONS</span>
+            <span>AWARDS & CERTIFICATIONS</span>
+          </div>
+        </div>
+
+        <!-- Achievement Card -->
+        <div class="achievement-card">
+          
+          <!-- Left Side: Image with Badge -->
+          <div class="achievement-media">
+            <div class="achievement-badge">
+              <span>🏆</span> CHAMPION
+            </div>
+            <a href="assets/crew-of-the-year.jpg" target="_blank" rel="noopener" class="achievement-image-link">
+              <img src="assets/crew-of-the-year.jpg" alt="McDonald's Mams Mall — Crew of the Year certificate" draggable="false">
+            </a>
+          </div>
+
+          <!-- Right Side: Details -->
+          <div class="achievement-content">
+            <p class="achievement-kicker">HANDS-ON DRIVE THRU CREW</p>
+            
+            <h3 class="achievement-title">
+              CREW OF THE YEAR
+            </h3>
+            
+            <!-- Short intro (long text moved to modal) -->
+            <p class="achievement-desc">
+              Awarded at the McDonald's year-end function for outstanding performance, consistency, and excellence in customer service on the drive-thru.
+            </p>
+
+            <!-- Facts Grid -->
+            <div class="achievement-facts-grid">
+              <div class="fact-block">
+                <span class="fact-label">EVENT</span>
+                <span class="fact-value">MCD Year End Function</span>
+              </div>
+              <div class="fact-block">
+                <span class="fact-label">DATE</span>
+                <span class="fact-value">16 December 2025</span>
+              </div>
+              <div class="fact-block">
+                <span class="fact-label">ROLE</span>
+                <span class="fact-value">Flexi Crew</span>
+              </div>
+            </div>
+
+            <!-- Tags -->
+            <div class="achievement-tags">
+              <span>DRIVE-THRU</span>
+              <span>CUSTOMER SERVICE</span>
+              <span>FLEXI CREW</span>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="achievement-actions">
+              
+              <!-- Button now triggers the popup modal instead of a new tab -->
+              <button class="btn btn-solid" id="openAchievementModal">
+                READ THE DETAILS <span>↗</span>
+              </button>
+
+              <a href="#experience" class="achievement-secondary-link">
+                THE EXPERIENCE
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        <p class="small-note" style="margin-top: 40px; color: var(--muted); font-family: var(--inter); font-size: 13px;">
+          More certifications and awards will be added here as I complete them.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- ================= ACHIEVEMENT MODAL (POPUP) ================= -->
+    <dialog class="achievement-modal" id="achievementModal">
+      <button class="modal-close" id="closeAchievementModal" aria-label="Close details">×</button>
+      
+      <div class="modal-content-inner">
+        <p class="eyebrow" style="color: var(--teal); margin-bottom: 12px;">AWARD DETAILS</p>
+        <h2 class="modal-title">Why I was chosen</h2>
+        
+        <p class="modal-text">
+          Awarded at the McDonald's year-end function. I was chosen for this recognition because of my exceptional speed and accuracy in the fast-paced drive-thru environment, consistently maintaining high customer satisfaction. 
+          <br><br>
+          My significant role involved managing complex orders under pressure, collaborating seamlessly with the kitchen team to keep service times low, and stepping up to support my colleagues during peak hours. This award reflects my dedication to hands-on operational excellence and teamwork.
+        </p>
+      </div>
+    </dialog>
+
+    <!-- ================= SKILLS ================= -->
+    <section class="skills-section section-pad reveal" id="skills">
+      <div class="section-shell">
+        <div class="skills-heading-row">
+          <div><h2>SKILLS</h2></div>
+          <p class="skills-aside"><span>WHAT I WORK WITH</span><br>6 AREAS</p>
+        </div>
+        <div class="skills-grid">
+          <article class="skill-panel">
+            <span class="corner corner-tl"></span><span class="corner corner-br"></span>
+            <p class="skill-kicker">DATA</p>
+            <h3>DATA ANALYSIS</h3>
+            <p class="skill-description">Turning messy datasets into clear narratives: dashboards, statistical analysis and visualisations that support real decisions.</p>
+            <div class="skill-chips">
+              <span><b class="tech-icon python">●</b>Python</span>
+              <span><b class="tech-icon pandas">Ⅱ</b>Pandas</span>
+              <span><b class="tech-icon sql">▤</b>SQL</span>
+              <span><b class="tech-icon matplotlib">◉</b>Matplotlib</span>
+              <span><b class="tech-icon seaborn">◒</b>Seaborn</span>
+              <span><b class="tech-icon jupyter">◌</b>Jupyter</span>
+              <span><b class="tech-icon powerbi">▥</b>Power BI</span>
+              <span><b class="tech-icon tableau">✣</b>Tableau</span>
+              <span><b class="tech-icon numpy">N</b>NumPy</span>
+              <span><b class="tech-icon plotly">◇</b>Plotly</span>
+              <span><b class="tech-icon streamlit">▶</b>Streamlit</span>
+              <span><b class="tech-icon sklearn">◐</b>scikit-learn</span>
+            </div>
+          </article>
+          <article class="skill-panel">
+            <span class="corner corner-tl"></span><span class="corner corner-br"></span>
+            <p class="skill-kicker">PIPELINES</p>
+            <h3>DATA ENGINEERING</h3>
+            <p class="skill-description">Moving data reliably: batch ETL into a warehouse, real-time event streams, and data-quality checks that catch bad records early.</p>
+            <div class="skill-chips">
+              <span><b class="tech-icon kafka">⧉</b>Apache Kafka</span>
+              <span><b class="tech-icon spark">✶</b>Spark Streaming</span>
+              <span><b class="tech-icon etl">⇄</b>ETL</span>
+              <span><b class="tech-icon postgres">♟</b>PostgreSQL</span>
+              <span><b class="tech-icon pydantic">P</b>Pydantic</span>
+              <span><b class="tech-icon docker">◈</b>Docker Compose</span>
+            </div>
+          </article>
+          <article class="skill-panel">
+            <span class="corner corner-tl"></span><span class="corner corner-br"></span>
+            <p class="skill-kicker">BUILD</p>
+            <h3>FULL-STACK DEVELOPMENT</h3>
+            <p class="skill-description">Building web apps end to end, from the interface people use to the server and data layer behind it.</p>
+            <div class="skill-chips">
+              <span><b class="tech-icon typescript">TS</b>TypeScript</span>
+              <span><b class="tech-icon javascript">JS</b>JavaScript</span>
+              <span><b class="tech-icon react">⚛</b>React</span>
+              <span><b class="tech-icon nextjs">N</b>Next.js</span>
+              <span><b class="tech-icon node">⬢</b>Node.js</span>
+              <span><b class="tech-icon express">EX</b>Express</span>
+              <span><b class="tech-icon tailwind">≋</b>Tailwind</span>
+              <span><b class="tech-icon three">◬</b>Three.js</span>
+              <span><b class="tech-icon html">5</b>HTML</span>
+              <span><b class="tech-icon css">3</b>CSS</span>
+              <span><b class="tech-icon python">●</b>Python</span>
+              <span><b class="tech-icon flask">F</b>Flask</span>
+              <span><b class="tech-icon r3f">◬</b>React Three Fiber</span>
+              <span><b class="tech-icon gsap">G</b>GSAP</span>
+              <span><b class="tech-icon maplibre">⌖</b>MapLibre</span>
+            </div>
+          </article>
+          <article class="skill-panel">
+            <span class="corner corner-tl"></span><span class="corner corner-br"></span>
+            <p class="skill-kicker">BACKEND</p>
+            <h3>APIS &amp; SECURITY</h3>
+            <p class="skill-description">Secure, tested back ends: REST APIs, database migrations, retry queues, authentication and role-based access, plus threat detection for security logs.</p>
+            <div class="skill-chips">
+              <span><b class="tech-icon fastapi">⚡</b>FastAPI</span>
+              <span><b class="tech-icon sqlalchemy">◫</b>SQLAlchemy</span>
+              <span><b class="tech-icon alembic">⚗</b>Alembic</span>
+              <span><b class="tech-icon redis">◆</b>Redis</span>
+              <span><b class="tech-icon mysql">◐</b>MySQL</span>
+              <span><b class="tech-icon jwt">⚿</b>JWT &amp; bcrypt</span>
+              <span><b class="tech-icon rbac">⛨</b>RBAC</span>
+              <span><b class="tech-icon gradio">◧</b>Gradio</span>
+              <span><b class="tech-icon pytest">✓</b>Pytest</span>
+            </div>
+          </article>
+          <article class="skill-panel">
+            <span class="corner corner-tl"></span><span class="corner corner-br"></span>
+            <p class="skill-kicker">TOOLS</p>
+            <h3>AI, CLOUD &amp; TOOLS</h3>
+            <p class="skill-description">The services and tooling behind shipped products: databases, deployment, version control and AI-assisted workflows.</p>
+            <div class="skill-chips">
+              <span><b class="tech-icon llm">✦</b>LLM APIs</span>
+              <span><b class="tech-icon postgres">♟</b>PostgreSQL</span>
+              <span><b class="tech-icon supabase">✦</b>Supabase</span>
+              <span><b class="tech-icon firebase">◆</b>Firebase</span>
+              <span><b class="tech-icon docker">◈</b>Docker</span>
+              <span><b class="tech-icon vercel">▲</b>Vercel</span>
+              <span><b class="tech-icon railway">◉</b>Railway</span>
+              <span><b class="tech-icon git">◆</b>Git</span>
+              <span><b class="tech-icon github">◉</b>GitHub</span>
+              <span><b class="tech-icon postman">↗</b>Postman</span>
+              <span><b class="tech-icon vite">ϟ</b>Vite</span>
+              <span><b class="tech-icon arduino">∞</b>Arduino</span>
+              <span><b class="tech-icon ghactions">▷</b>GitHub Actions</span>
+              <span><b class="tech-icon render">R</b>Render</span>
+            </div>
+          </article>
+          <article class="skill-panel">
+            <span class="corner corner-tl"></span><span class="corner corner-br"></span>
+            <p class="skill-kicker">LOW-LEVEL</p>
+            <h3>SYSTEMS, HARDWARE &amp; GAMES</h3>
+            <p class="skill-description">Working close to the machine and beyond the browser: an operating system from scratch, a robot car, and a 3D game.</p>
+            <div class="skill-chips">
+              <span><b class="tech-icon c">C</b>C</span>
+              <span><b class="tech-icon asm">⌘</b>ARM64 Assembly</span>
+              <span><b class="tech-icon qemu">Q</b>QEMU</span>
+              <span><b class="tech-icon gdb">⚙</b>GDB</span>
+              <span><b class="tech-icon make">M</b>Make</span>
+              <span><b class="tech-icon cpp">++</b>Arduino C++</span>
+              <span><b class="tech-icon godot">◎</b>Godot 4</span>
+              <span><b class="tech-icon gdscript">G</b>GDScript</span>
+              <span><b class="tech-icon blender">◔</b>Blender</span>
+            </div>
+          </article>
+        </div>
+        <p class="skills-note">My toolkit is evolving as I learn, build and ship more projects.</p>
+      </div>
+    </section>
+
+    <!-- ================= PROJECTS ================= -->
+    <section class="section-shell projects section-pad reveal" id="projects">
+      <div class="projects-head">
+        <h2>PROJECTS</h2>
+      </div>
+      <div class="project-grid">
+        <article class="project-card" data-project="retail" tabindex="0" role="button" aria-label="View SA Retail Sales Data Pipeline details">
+          <div class="project-thumb">
+            <img src="assets/project-retail.jpg" alt="SA Retail Sales Data Pipeline preview" draggable="false">
+          </div>
+          <p class="project-kicker">PYTHON · 2026</p>
+          <h3 class="project-title">SA RETAIL SALES DATA PIPELINE</h3>
+          <p class="project-desc">An end-to-end ETL pipeline turning messy retail CSVs into analytics-ready PostgreSQL tables and a Power BI dashboard.</p>
+          <div class="project-actions">
+            <button class="btn btn-solid" type="button">DETAILS <span>↗</span></button>
+            <a class="btn btn-outline" href="#" target="_blank" rel="noopener">LIVE SITE <span>↗</span></a>
+          </div>
+        </article>
+        <article class="project-card" data-project="dynasty" tabindex="0" role="button" aria-label="View Dynasty Integrated Systems details">
+          <div class="project-thumb">
+            <img src="assets/project-dynasty.jpg" alt="Dynasty Integrated Systems preview" draggable="false">
+          </div>
+          <p class="project-kicker">WEB APP · 2026</p>
+          <h3 class="project-title">DYNASTY INTEGRATED SYSTEMS</h3>
+          <p class="project-desc">A digital home for Dynasty FC — club information, community updates and match data in one place.</p>
+          <div class="project-actions">
+            <button class="btn btn-solid" type="button">DETAILS <span>↗</span></button>
+            <a class="btn btn-outline" href="https://dynastyfc-webdev.onrender.com/" target="_blank" rel="noopener">LIVE SITE <span>↗</span></a>
+          </div>
+        </article>
+        <article class="project-card" data-project="portfolio" tabindex="0" role="button" aria-label="View Personal Portfolio details">
+          <div class="project-thumb">
+            <img src="assets/project-portfolio.jpg" alt="Personal Portfolio preview" draggable="false">
+          </div>
+          <p class="project-kicker">UI/UX · 2026</p>
+          <h3 class="project-title">PERSONAL PORTFOLIO</h3>
+          <p class="project-desc">A single-page portfolio built around clear storytelling, expressive type and a cinematic interactive portrait.</p>
+          <div class="project-actions">
+            <button class="btn btn-solid" type="button">DETAILS <span>↗</span></button>
+            <a class="btn btn-outline" href="#" target="_blank" rel="noopener">LIVE SITE <span>↗</span></a>
+          </div>
+        </article>
+        <article class="project-card" data-project="fourth" tabindex="0" role="button" aria-label="View Next in the Pipeline details">
+          <div class="project-thumb">
+            <img src="assets/project-fourth.jpg" alt="Next project preview" draggable="false">
+          </div>
+          <p class="project-kicker">EXPLORATION · 2026</p>
+          <h3 class="project-title">NEXT IN THE PIPELINE</h3>
+          <p class="project-desc">A reserved slot for the next case study, experiment or system I bring to life.</p>
+          <div class="project-actions">
+            <button class="btn btn-solid" type="button">DETAILS <span>↗</span></button>
+            <a class="btn btn-outline" href="#" target="_blank" rel="noopener">LIVE SITE <span>↗</span></a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+    <section class="contact-section" id="contact">
+      <div class="section-shell contact-inner">
+        
+        <div class="contact-grid">
+          
+          <div class="contact-text-side">
+            <h2>LET'S<br>WORK<span>.</span></h2>
+            <p class="contact-sub">I'm open to projects, collaborations and internships.</p>
+          </div>
+
+          <div class="contact-links-side">
+            <a href="mailto:nelisiwehappiness39@gmail.com" class="hud-link">
+              <span class="hud-label">EMAIL</span>
+              <span class="hud-value">nelisiwehappiness39@gmail.com</span>
+              <span class="hud-arrow">↗</span>
+            </a>
+
+            <a href="https://github.com/NelisiweNkwanyana" target="_blank" rel="noopener" class="hud-link">
+              <span class="hud-label">GITHUB</span>
+              <span class="hud-value">github.com/NelisiweNkwanyana</span>
+              <span class="hud-arrow">↗</span>
+            </a>
+
+            <a href="https://www.linkedin.com/in/nelisiwe-nkwanyana/" target="_blank" rel="noopener" class="hud-link">
+              <span class="hud-label">LINKEDIN</span>
+              <span class="hud-value">linkedin.com/in/nelisiwe-nkwanyana</span>
+              <span class="hud-arrow">↗</span>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Big Name Footer -->
+        <div class="contact-footer">
+          <span class="footer-name">NELISIWE NKWANYANA</span>
+          <span class="footer-location">BUILT WITH REACT AND THREE.JS IN PRETORIA</span>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- PROJECT MODAL (Existing) -->
+  <dialog class="project-modal" id="projectModal">
+    <button class="modal-close" aria-label="Close project details">×</button>
+    <p class="eyebrow" id="modalType">PROJECT DETAILS</p>
+    <h2 id="modalTitle">Project title</h2>
+    <p id="modalDescription"></p>
+    <div class="modal-tech" id="modalTech"></div>
+    <div class="modal-actions">
+      <a id="modalLive" class="button button-dark" href="#" target="_blank" rel="noopener">OPEN LIVE PROJECT ↗</a>
+      <button class="button button-outline" id="modalCloseBottom">CLOSE DETAILS ×</button>
+    </div>
+    <p class="modal-note" id="modalNote"></p>
+  </dialog>
+
+  <script type="module" src="script.js"></script>
+
+</body>
+</html>
