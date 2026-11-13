@@ -9,7 +9,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,500..800&family=Onest:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
 
@@ -110,7 +110,7 @@
           <div class="side-block side-block-stats">
             <span class="side-label">AT A GLANCE</span>
             <div class="mini-stats">
-              <div><strong>5</strong><small>PROJECTS</small></div>
+              <div><strong>11</strong><small>PROJECTS</small></div>
               <div><strong>6</strong><small>SKILLS</small></div>
               <div><strong>1</strong><small>CERTIFICATIONS</small></div>
             </div>
@@ -450,56 +450,7 @@
       <div class="projects-head">
         <h2>PROJECTS</h2>
       </div>
-      <div class="project-grid">
-        <article class="project-card" data-project="retail" tabindex="0" role="button" aria-label="View SA Retail Sales Data Pipeline details">
-          <div class="project-thumb">
-            <img src="Assets/project-retail.jpg" alt="SA Retail Sales Data Pipeline preview" draggable="false">
-          </div>
-          <p class="project-kicker">PYTHON · 2026</p>
-          <h3 class="project-title">SA RETAIL SALES DATA PIPELINE</h3>
-          <p class="project-desc">An end-to-end ETL pipeline turning messy retail CSVs into analytics-ready PostgreSQL tables and a Power BI dashboard.</p>
-          <div class="project-actions">
-            <button class="btn btn-solid" type="button">DETAILS <span>↗</span></button>
-            <a class="btn btn-outline" href="#" target="_blank" rel="noopener">LIVE SITE <span>↗</span></a>
-          </div>
-        </article>
-        <article class="project-card" data-project="dynasty" tabindex="0" role="button" aria-label="View Dynasty Integrated Systems details">
-          <div class="project-thumb">
-            <img src="Assets/project-dynasty.jpg" alt="Dynasty Integrated Systems preview" draggable="false">
-          </div>
-          <p class="project-kicker">WEB APP · 2026</p>
-          <h3 class="project-title">DYNASTY INTEGRATED SYSTEMS</h3>
-          <p class="project-desc">A digital home for Dynasty FC — club information, community updates and match data in one place.</p>
-          <div class="project-actions">
-            <button class="btn btn-solid" type="button">DETAILS <span>↗</span></button>
-            <a class="btn btn-outline" href="https://dynastyfc-webdev.onrender.com/" target="_blank" rel="noopener">LIVE SITE <span>↗</span></a>
-          </div>
-        </article>
-        <article class="project-card" data-project="portfolio" tabindex="0" role="button" aria-label="View Personal Portfolio details">
-          <div class="project-thumb">
-            <img src="Assets/project-portfolio.jpg" alt="Personal Portfolio preview" draggable="false">
-          </div>
-          <p class="project-kicker">UI/UX · 2026</p>
-          <h3 class="project-title">PERSONAL PORTFOLIO</h3>
-          <p class="project-desc">A single-page portfolio built around clear storytelling, expressive type and a cinematic interactive portrait.</p>
-          <div class="project-actions">
-            <button class="btn btn-solid" type="button">DETAILS <span>↗</span></button>
-            <a class="btn btn-outline" href="#" target="_blank" rel="noopener">LIVE SITE <span>↗</span></a>
-          </div>
-        </article>
-        <article class="project-card" data-project="fourth" tabindex="0" role="button" aria-label="View Next in the Pipeline details">
-          <div class="project-thumb">
-            <img src="Assets/project-fourth.jpg" alt="Next project preview" draggable="false">
-          </div>
-          <p class="project-kicker">EXPLORATION · 2026</p>
-          <h3 class="project-title">NEXT IN THE PIPELINE</h3>
-          <p class="project-desc">A reserved slot for the next case study, experiment or system I bring to life.</p>
-          <div class="project-actions">
-            <button class="btn btn-solid" type="button">DETAILS <span>↗</span></button>
-            <a class="btn btn-outline" href="#" target="_blank" rel="noopener">LIVE SITE <span>↗</span></a>
-          </div>
-        </article>
-      </div>
+      <div class="project-grid" id="projectGrid"></div>
     </section>
 
     <!-- ================= CONTACT ================= -->
@@ -545,20 +496,6 @@
     </section>
 
   </main>
-
-  <!-- PROJECT MODAL (Existing) -->
-  <dialog class="project-modal" id="projectModal">
-    <button class="modal-close" aria-label="Close project details">×</button>
-    <p class="eyebrow" id="modalType">PROJECT DETAILS</p>
-    <h2 id="modalTitle">Project title</h2>
-    <p id="modalDescription"></p>
-    <div class="modal-tech" id="modalTech"></div>
-    <div class="modal-actions">
-      <a id="modalLive" class="button button-dark" href="#" target="_blank" rel="noopener">OPEN LIVE PROJECT ↗</a>
-      <button class="button button-outline" id="modalCloseBottom">CLOSE DETAILS ×</button>
-    </div>
-    <p class="modal-note" id="modalNote"></p>
-  </dialog>
 
   <script type="module" src="script.js"></script>
 

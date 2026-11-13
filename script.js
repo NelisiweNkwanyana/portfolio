@@ -1,9 +1,8 @@
-'use strict';
-
 import * as THREE from 'three';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { mountPortraitReveal } from './portrait.js';
+import './projects.js';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -222,142 +221,6 @@ if ('IntersectionObserver' in window) {
     element.classList.add('is-visible');
   });
 }
-
-
-/* =========================================
-   PROJECT DATA
-========================================= */
-
-const projects = {
-  retail: {
-    type: 'DATA ENGINEERING · ANALYTICS',
-    title: 'SA Retail Sales Data Pipeline',
-    description: 'An end-to-end ETL pipeline processing 5,000+ South African retail transactions from raw CSV files to analytics-ready PostgreSQL tables. The workflow cleans inconsistent records with Python and pandas, models a relational schema, creates SQL views for retail KPIs, and presents insights in an interactive Power BI dashboard.',
-    tech: ['Python', 'pandas', 'SQLAlchemy', 'PostgreSQL', 'SQL', 'Power BI', 'Git'],
-    live: '',
-    note: 'Add the live dashboard or GitHub repository URL when it is ready.'
-  },
-  dynasty: {
-    type: 'FULL-STACK · COMMUNITY',
-    title: 'Dynasty Integrated Systems',
-    description: 'A web platform for Dynasty FC, designed to make club information and community updates easier to access.',
-    tech: ['HTML', 'CSS', 'JavaScript', 'Web development', 'Deployment'],
-    live: 'https://dynastyfc-webdev.onrender.com/',
-    note: 'Live website supplied for this portfolio.'
-  },
-  portfolio: {
-    type: 'UI/UX · FRONT-END',
-    title: 'Personal Portfolio',
-    description: 'A single-page portfolio focused on clear storytelling, generous whitespace, expressive typography, animated portrait artwork and accessible project details.',
-    tech: ['HTML', 'CSS', 'JavaScript', 'UI/UX'],
-    live: '',
-    note: 'Add a public deployment URL after publishing this portfolio.'
-  },
-  fourth: {
-    type: 'EXPLORATION · IN PROGRESS',
-    title: 'Next in the Pipeline',
-    description: 'This slot is reserved for another project or case study. Replace it with your next completed build, research project or data analysis.',
-    tech: ['Research', 'Prototyping'],
-    live: '',
-    note: 'Update this project when your fourth project is ready.'
-  }
-};
-
-
-/* =========================================
-   PROJECT MODAL
-========================================= */
-
-const modal = document.getElementById('projectModal');
-const modalType = document.getElementById('modalType');
-const modalTitle = document.getElementById('modalTitle');
-const modalDescription = document.getElementById('modalDescription');
-const modalTech = document.getElementById('modalTech');
-const modalLive = document.getElementById('modalLive');
-const modalNote = document.getElementById('modalNote');
-
-function openProject(key) {
-  const project = projects[key];
-  if (!project || !modal) return;
-
-  if (!modalType || !modalTitle || !modalDescription || !modalTech || !modalLive || !modalNote) {
-    console.warn('One or more project modal elements are missing.');
-    return;
-  }
-
-  modalType.textContent = project.type;
-  modalTitle.textContent = project.title;
-  modalDescription.textContent = project.description;
-  modalNote.textContent = project.note;
-
-  modalTech.replaceChildren(
-    ...project.tech.map(technology => {
-      const chip = document.createElement('span');
-      chip.textContent = technology;
-      return chip;
-    })
-  );
-
-  if (project.live) {
-    modalLive.href = project.live;
-    modalLive.hidden = false;
-  } else {
-    modalLive.hidden = true;
-    modalLive.removeAttribute('href');
-  }
-
-  if (!modal.open) {
-    modal.showModal();
-  }
-
-  if (typeof gsap !== 'undefined' && !prefersReducedMotion) {
-    gsap.fromTo(
-      modal,
-      { opacity: 0, y: 45, scale: 0.94, filter: 'blur(8px)' },
-      {
-        opacity: 1, y: 0, scale: 1, filter: 'blur(0px)',
-        duration: 0.75, ease: 'expo.out', clearProps: 'all'
-      }
-    );
-  }
-}
-
-
-/* =========================================
-   PROJECT CARD EVENTS
-========================================= */
-
-document.querySelectorAll('.project-card').forEach(card => {
-  card.addEventListener('click', () => {
-    openProject(card.dataset.project);
-  });
-
-  card.addEventListener('keydown', event => {
-    if (event.key === 'Enter' || event.key === ' ') {
-      event.preventDefault();
-      openProject(card.dataset.project);
-    }
-  });
-});
-
-
-/* =========================================
-   CLOSE PROJECT MODAL
-========================================= */
-
-document.querySelector('.modal-close')?.addEventListener('click', () => {
-  modal?.close();
-});
-
-document.getElementById('modalCloseBottom')?.addEventListener('click', () => {
-  modal?.close();
-});
-
-modal?.addEventListener('click', event => {
-  if (event.target === modal) {
-    modal.close();
-  }
-});
 
 
 /* =========================================

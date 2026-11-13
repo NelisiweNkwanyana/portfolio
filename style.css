@@ -8,9 +8,9 @@
   --pink-glow: rgba(255,105,180,.42);
   --line: rgba(12,16,38,.14);
   --mono: "DM Mono", monospace;
-  --sans: "DM Sans", sans-serif;
-  --display: "Oswald", Impact, sans-serif;
-  --inter: "Inter", "DM Sans", sans-serif;
+  --sans: "Onest", system-ui, sans-serif;
+  --display: "Bricolage Grotesque", system-ui, sans-serif;
+  --inter: "Onest", system-ui, sans-serif;
 }
 
 *{box-sizing:border-box}
